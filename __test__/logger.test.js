@@ -10,7 +10,7 @@ describe ('logger middleware', ()=>{
   const next = jest.fn();
 
   beforeEach(()=>{
-    consoleSpy = jest.spyOn(console, 'log');
+    consoleSpy = jest.spyOn(console, 'log').mockImplementation();
   });
 
   afterEach(()=>{

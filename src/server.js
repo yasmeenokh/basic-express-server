@@ -3,13 +3,16 @@
 const express = require('express');
 const app = express();
 
-const errorHandlers = require('../src/error-handlers/500');
-const notFoundHandlers = require('../src/error-handlers/404');
-
 const logger = require('../src/middleware/logger');
 const validator = require('../src/middleware/validator');
 
+const errorHandlers = require('../src/error-handlers/500');
+const notFoundHandlers = require('../src/error-handlers/404');
 
+
+
+app.use(logger);
+app.use(express.json());
 
 app.get('/', (request, response)=>{
   response.send('Welcome To The SERVER.JS');
@@ -30,8 +33,6 @@ app.get('/bad', (request, response)=>{
 
 app.use(errorHandlers);
 app.use('*', notFoundHandlers);
-app.use(logger);
-app.use(express.json());
 
 
 function start(PORT){
