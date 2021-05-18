@@ -14,7 +14,7 @@ Run the command npm i dotenv express jest supertest to install dependencies
 create .env file with PORT variable
 ## Test
 Run the command npm test to test and verify the server and the middleware are working.
-Run the command npm run lint for testing lint.
+Run the command npm run test for testing .
 ## Run
 Start the server using nodemon
 Visit http://localhost:PORT at the PORT number you've assigned in your .env
